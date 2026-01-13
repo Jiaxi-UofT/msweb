@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精准质谱 - 专业的第三方质谱检测服务商</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* 导航栏 */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0056b3;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: #333;
+            margin-left: 5px;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0056b3;
+        }
+
+        .cta-button {
+            background-color: #0056b3;
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #004494;
+        }
+
+        /* 首屏 Hero 区域 */
+        .hero {
+            margin-top: 60px;
+            background: linear-gradient(135deg, #0056b3 0%, #00a8e8 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: white;
+            color: #0056b3;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* 服务介绍部分 */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 4px solid #0056b3;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+
+        /* 客户留资表单 */
+        .contact-section {
+            background-color: #e9ecef;
+        }
+
+        .form-container {
+            background: white;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 0 3px rgba(0,86,179,0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #343a40;
+            color: #adb5bd;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* 简化演示，移动端隐藏导航链接 */
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">🧬 精准质谱 <span>BioTech</span></a>
+            <div class="nav-links">
+                <a href="#services">核心服务</a>
+                <a href="#about">关于我们</a>
+                <a href="#contact" class="cta-button">立即咨询</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首屏区域 -->
+    <section class="hero">
+        <h1>探索微观真相，赋能生命科学</h1>
+        <p>提供全球领先的蛋白质组学、代谢组学及小分子定量检测服务</p>
+        <a href="#contact" class="hero-btn">开始项目咨询</a>
+    </section>
+
+    <!-- 服务列表 -->
+    <section id="services" class="section">
+        <h2 class="section-title">核心检测服务</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🧪 蛋白质组学</h3>
+                <p>提供TMT/iTRAQ定量、Label-free非标定量及修饰蛋白质组学分析。适用于生物标志物筛选与机制研究。</p>
+            </div>
+            <div class="service-card">
+                <h3>📊 代谢组学</h3>
+                <p>非靶向代谢组学全谱分析与靶向代谢物绝对定量。覆盖血浆、尿液、组织等多种样本类型。</p>
+            </div>
+            <div class="service-card">
+                <h3>💊 药物分析 (DMPK)</h3>
+                <p>符合GLP标准的小分子药物定量分析，支持药代动力学(PK)及生物等效性(BE)研究。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 优势部分 -->
+    <section id="about" class="section" style="background-color: #fff;">
+        <h2 class="section-title">为什么选择我们</h2>
+        <div class="services-grid">
+            <div class="service-card" style="border-top-color: #ffc107;">
+                <h3>顶尖设备</h3>
+                <p>拥有 Thermo Fisher Orbitrap Exploris 480 及 SCIEX Triple Quad 等多台高端质谱仪。</p>
+            </div>
+            <div class="service-card" style="border-top-color: #17a2b8;">
+                <h3>极速交付</h3>
+                <p>标准项目 5-7 个工作日交付报告，加急服务最快 48 小时出具结果。</p>
+            </div>
+            <div class="service-card" style="border-top-color: #6c757d;">
+                <h3>数据安全</h3>
+                <p>严格的 LIMS 实验室信息管理系统，确保您的原始数据与实验结果绝对保密。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户留资表单 -->
+    <section id="contact" class="section contact-section">
+        <h2 class="section-title">项目需求咨询</h2>
+        <div class="form-container">
+            <form id="clientForm">
+                <div class="form-group">
+                    <label for="name">联系人姓名 *</label>
+                    <input type="text" id="name" class="form-control" placeholder="请输入您的姓名" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">公司/单位名称 *</label>
+                    <input type="text" id="company" class="form-control" placeholder="例如：xx大学 / xx制药" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">电子邮箱 *</label>
+                    <input type="email" id="email" class="form-control" placeholder="用于接收检测报告" required>
+                </div>
+                <div class="form-group">
+                    <label for="needs">检测需求描述</label>
+                    <textarea id="needs" class="form-control" rows="4" placeholder="请简述您的样本类型（如血清、组织）及希望检测的目标..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">提交需求</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2024 精准质谱生物科技有限公司. All rights reserved.</p>
+        <p style="font-size: 0.9rem; margin-top: 10px;">地址：上海市浦东新区张江高科技园区 | 电话：400-888-8888</p>
+    </footer>
+
+    <!-- 简单的交互脚本 -->
+    <script>
+        document.getElementById('clientForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // 阻止表单默认提交刷新
+            
+            // 获取用户输入
+            var name = document.getElementById('name').value;
+            var company = document.getElementById('company').value;
+            
+            // 模拟提交成功
+            alert('提交成功！
+
+感谢 ' + name + ' (' + company + ') 的咨询。
+我们的技术专家将在24小时内通过邮件与您联系。');
+            
+            // 清空表单
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
